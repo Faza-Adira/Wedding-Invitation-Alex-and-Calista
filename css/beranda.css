@@ -1,0 +1,1354 @@
+@font-face {
+  font-family: "Palyball";
+  src: url("fonts/Palyball.ttf") format("truetype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../asset/image/foto_1.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* NAVBAR GLASS */
+.navbar {
+  position: fixed;
+  top: 20px;
+  z-index: 99;
+
+  transform: translateY(40px);
+  padding: 10px 25px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.2ss;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.25);
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+
+  display: flex;
+  align-items: left;
+  justify-content: flex-end;
+}
+
+.navbar a:hover {
+  color: #000000;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: black;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.subtitle,
+.title,
+.names,
+.btn {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+  font-family: "Playfair Display SC", serif;
+}
+
+.subtitle {
+  animation-delay: 0.5s;
+}
+.title {
+  animation-delay: 0.8s;
+}
+.names {
+  animation-delay: 1.1s;
+}
+.btn {
+  animation-delay: 1.4s;
+}
+
+.subtitle {
+  font-size: 92px;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+
+span {
+  font-weight: 200;
+  font-style: italic;
+}
+
+.title {
+  font-size: 92px;
+  margin: 10px 0;
+  font-weight: 100;
+}
+
+.names {
+  font-family: "Playball", cursive;
+  font-weight: 200;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  padding: 10px 30px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.story2-section {
+  padding: 80px 7%;
+  padding-top: 150px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* WRAPPER */
+.story2-wrapper {
+  position: relative;
+  flex: 2;
+}
+
+.story2-line {
+  position: absolute;
+  left: 200px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #ccc;
+}
+
+.story2-line img {
+  width: 30px;
+  transform: translate(-15px, 125px);
+}
+
+.story2-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.story2-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+}
+
+.story2-name {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.story2-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.story2-image {
+  flex: 1;
+  text-align: center;
+}
+
+.story2-image img {
+  width: 400px;
+}
+
+@keyframes story2FadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sakura_71 {
+  position: absolute;
+  width: 90px;
+  padding-top: 190px;
+}
+
+.sakura_72 {
+  position: absolute;
+  width: 130px;
+  padding-top: 200px;
+}
+
+.story2-line,
+.story2-row,
+.story2-image,
+.sakura_71,
+.sakura_72 {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.story2-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.countdown-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: #ffffff;
+  margin-top: 100px;
+}
+
+.weare-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.weare-icon {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.weare-text {
+  font-style: italic;
+  color: #000000;
+  margin: 0;
+  font-family: "Playball", sans;
+  font-size: 36px;
+  position: relative;
+  z-index: 10;
+}
+
+.title-2 {
+  font-size: 42px;
+  font-family: "Playfair Display SC", serif;
+  z-index: 10;
+  position: relative;
+}
+.desc {
+  max-width: 900px;
+  margin: auto;
+  color: #000000;
+  font-size: 20px;
+  line-height: 1.6;
+  position: relative;
+  font-size: 16px;
+  z-index: 10;
+}
+
+.countdown {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  width: 205px;
+  height: 150px;
+  background: #b87333;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  margin-top: 40px;
+}
+
+.time-box span {
+  font-size: 64px;
+  font-family: "Playfair Display", serif;
+}
+
+.time-box small {
+  font-size: 13px;
+  margin-top: 5px;
+  opacity: 0.9;
+  font-family: "Playfair Display SC", serif;
+}
+
+.sakura_1 {
+  position: absolute;
+  width: 390px;
+  left: 0;
+  z-index: 1;
+}
+
+.sakura_2 {
+  position: absolute;
+  width: 300px;
+  right: 0;
+  z-index: 1;
+}
+
+.bunga_tengah {
+  position: absolute;
+  z-index: 1;
+  opacity: 50%;
+  width: 150px;
+  padding-top: 150px;
+}
+
+.countdown-section .heading,
+.countdown-section .time-box,
+.sakura_1,
+.bunga_tengah,
+.sakura_2 {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.countdown-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.wedding-day-section {
+  padding: 80px 5%;
+  background: #fff;
+}
+
+.hiasan-wedding-day-1 {
+  position: absolute;
+  width: 180px;
+  right: 0;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.hiasan-wedding-day-2 {
+  position: absolute;
+  width: 180px;
+  padding-top: 550px;
+  left: 0;
+  z-index: 2;
+}
+
+.hiasan-wedding-day-3 {
+  position: absolute;
+  width: 25px;
+  padding-top: 95px;
+  margin-left: 290px;
+}
+
+.hiasan-wedding-day-4 {
+  position: absolute;
+  width: 40px;
+  padding-top: 25px;
+  margin-left: 400px;
+}
+
+.hiasan-wedding-day-5 {
+  position: absolute;
+  width: 25px;
+  padding-top: 570px;
+  margin-left: 1000px;
+}
+
+.hiasan-wedding-day-6 {
+  position: absolute;
+  width: 40px;
+  padding-top: 600px;
+  margin-left: 920px;
+}
+
+.pink-frame-1 {
+  position: relative;
+  border: 2px solid #ff8fb1;
+  border-top-left-radius: 200px;
+  border-bottom-right-radius: 200px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 1340px;
+  height: 680px;
+  z-index: 1;
+}
+
+.pink-frame-2 {
+  position: relative;
+  border: 2px solid #ff8fb1;
+  border-top-left-radius: 1000px;
+  border-bottom-right-radius: 1000px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 1340px;
+  height: 680px;
+  z-index: 1;
+}
+
+.wedding-title {
+  text-align: center;
+  font-family: "Playball", cursive;
+  font-size: 32px;
+  color: #c67a2e;
+  margin-bottom: 40px;
+  margin-top: 60px;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.icon-card {
+  width: 55px;
+  margin: 20px 0;
+}
+
+.card {
+  background: #c67a2e;
+  color: #fff;
+  width: 340px;
+  height: 380px;
+  padding: 25px;
+  font-size: 24px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: "Playfair Display SC", serif;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: "Playfair Display", serif;
+}
+
+.location-section {
+  padding: 80px 60px;
+  background: #fff;
+}
+
+.location-title {
+  text-align: center;
+  font-family: "Playball", cursive;
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+.location-container {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.location-info {
+  flex: 1;
+}
+
+.location-row {
+  display: grid;
+  grid-template-columns: 120px 2px 1fr;
+  gap: 20px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 14px;
+  color: #444;
+}
+
+.line-divider {
+  width: 2px;
+  background: #333;
+}
+
+.content-2 {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #222;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #555;
+}
+
+.location-image img {
+  width: 420px;
+  border-radius: 6px;
+}
+
+.loc-section {
+  padding: 80px 60px;
+  background: #fff;
+}
+
+.loc-title {
+  text-align: center;
+  font-family: "Playball", cursive;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.loc-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.loc-sidebar {
+  border-right: 1px solid #ccc;
+  padding-left: 100px;
+}
+
+.loc-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.loc-sidebar li {
+  font-size: 14px;
+  color: #000000;
+}
+
+.loc-sidebar .spacing {
+  padding-top: 175px;
+}
+#spacing-loc1 {
+  padding-top: 45px;
+}
+
+#spacing-loc2 {
+  padding-top: 39px;
+}
+#spacing-loc3 {
+  padding-top: 44px;
+  padding-bottom: 100px;
+}
+/* content */
+.loc-place {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.loc-address {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.loc-map-btn {
+  margin: 18px 0 24px;
+  padding: 8px 60px;
+  border: 1px solid #c67a2e;
+  background: transparent;
+  color: #c67a2e;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.loc-map-btn:hover {
+  background: #c67a2e;
+  color: #fff;
+}
+
+.loc-info p {
+  margin: 10px 0;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+.loc-detail {
+  font-size: 13px;
+  color: #000000;
+  line-height: 1.7;
+  max-width: 1000px;
+}
+
+.samping {
+  position: absolute;
+  width: 400px;
+  height: 250px;
+  margin-left: 600px;
+}
+
+.sakura_9 {
+  width: 160px;
+  height: auto;
+  position: absolute;
+  left: 0;
+  transform: rotate(23deg);
+}
+
+.sakura_3 {
+  width: 40px;
+  height: auto;
+  position: absolute;
+  left: 0;
+  margin-top: 410px;
+  margin-left: 267px;
+}
+
+.sakura_7 {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  right: -40px;
+  margin-top: 300px;
+}
+
+.moments {
+  padding: 80px 6%;
+}
+
+.moments-title {
+  font-family: "Playball", cursive;
+  font-size: 64px;
+  margin-bottom: 40px;
+  position: absolute;
+  margin-top: 100px;
+}
+
+/* GRID UTAMA */
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 200px;
+  gap: 25px;
+}
+
+/* FOTO UMUM */
+.m-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.m1 {
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 2;
+}
+
+.m2 {
+  grid-column: 2 / span 2;
+  grid-row: 3 / span 1;
+}
+
+.m3 {
+  grid-column: 5 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.m4 {
+  grid-column: 1 / span 2;
+  grid-row: 4 / span 1;
+}
+
+.m5 {
+  grid-column: 3 / span 2;
+  grid-row: 4 / span 1;
+}
+
+.m6 {
+  grid-column: 5 / span 1;
+  grid-row: 3 / span 2;
+}
+
+.gift-section {
+  padding: 120px 8%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-decor-left {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 350px;
+}
+
+.gift-decor-right {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 200px;
+}
+
+.gift-title {
+  font-family: "Playfair Display SC", serif;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.gift-desc {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.7;
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+
+.gift-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.gift-card {
+  width: 280px;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 6px;
+  text-align: left;
+  background: #fff;
+}
+
+.gift-bank {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.gift-bank img {
+  width: 30px;
+}
+
+.gift-bank span {
+  font-weight: bold;
+}
+
+.gift-number {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+.gift-name {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.gift-copy {
+  background: #b87333;
+  color: white;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  float: right;
+}
+
+.gift-title,
+.gift-desc,
+.gift-card,
+.gift-decor-left,
+.gift-decor-right {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.gift-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.Address {
+  text-align: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.Address-title {
+  font-size: 32px;
+  font-weight: bolder;
+  font-family: "Playfair Display SC", serif;
+}
+
+.Address-detail {
+  letter-spacing: 2px;
+  margin-top: 40px;
+}
+
+.Address-title,
+.Address-detail {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.address-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.Address-detail {
+  transition-delay: 0.2s;
+}
+
+.wish-section {
+  max-width: 700px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.wish-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.wish-icon {
+  width: 50px;
+}
+
+.wish-title {
+  font-family: "Playfair Display SC", serif;
+  font-size: 36px;
+  letter-spacing: 5px;
+}
+
+.wish-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.wish-name {
+  height: 55px;
+  border: 2px solid #c07a3e;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.wish-attendance {
+  display: flex;
+  gap: 20px;
+}
+
+.wish-btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  border: 2px solid #c07a3e;
+  background: white;
+  color: #c07a3e;
+  font-size: 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.wish-btn.active {
+  background: #c07a3e;
+  color: white;
+}
+
+.wish-message {
+  height: 180px;
+  border: 2px solid #c07a3e;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  resize: none;
+}
+
+.wish-submit {
+  width: 150px;
+  padding: 14px;
+  border: none;
+  background: #c07a3e;
+  color: white;
+  border-radius: 6px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.wish-submit:hover {
+  opacity: 0.9;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 40px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.social img {
+  width: 20px;
+}
+
+.social a {
+  color: black;
+  text-decoration: none;
+}
+
+.social a:hover {
+  text-decoration: underline;
+}
+
+.wedding-day-section,
+.loc-section,
+.moments,
+.wish-section,
+.footer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.section-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.wish-display {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.wish-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: wishScroll 25s linear infinite;
+}
+
+.wish-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 8px;
+  min-width: 260px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.wish-item h4 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.wish-item p {
+  font-size: 14px;
+  color: #555;
+}
+
+@keyframes wishScroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.wish-display {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  /* HERO */
+  .subtitle,
+  .title {
+    font-size: 60px;
+  }
+
+  .navbar ul {
+    gap: 15px;
+  }
+
+  .navbar a {
+    font-size: 11px;
+  }
+
+  .story2-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .story2-row {
+    grid-template-columns: 1fr;
+  }
+
+  .story2-line {
+    display: none;
+  }
+
+  .story2-image img {
+    width: 300px;
+  }
+
+  .countdown {
+    gap: 30px;
+  }
+
+  .time-box {
+    width: 140px;
+    height: 120px;
+  }
+
+  .time-box span {
+    font-size: 40px;
+  }
+
+  .pink-frame-1,
+  .pink-frame-2 {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .card-wrapper {
+    gap: 30px;
+  }
+
+  .card {
+    width: 260px;
+    height: auto;
+  }
+
+  .loc-container {
+    grid-template-columns: 1fr;
+  }
+
+  .loc-sidebar {
+    display: none;
+  }
+
+  .samping {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .moments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+  }
+
+  .m1,
+  .m2,
+  .m3,
+  .m4,
+  .m5,
+  .m6 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .gift-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sakura_1,
+  .sakura_2,
+  .sakura_3,
+  .sakura_7,
+  .sakura_9 {
+    display: none;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  @media (max-width: 600px) {
+    /* navbar layout */
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-menu {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      padding: 30px 0;
+      transform: translateY(-150%);
+      transition: 0.4s;
+    }
+  }
+  .hero {
+    height: 90vh;
+  }
+
+  .subtitle {
+    font-size: 38px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .names {
+    font-size: 14px;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    top: 10px;
+    padding: 8px 15px;
+  }
+
+  .navbar ul {
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 10px;
+  }
+
+  /* STORY */
+  .story2-section {
+    padding: 60px 20px;
+  }
+
+  .story2-desc {
+    font-size: 14px;
+  }
+
+  .story2-name {
+    font-size: 15px;
+  }
+
+  .title-2 {
+    font-size: 28px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .time-box {
+    width: 100px;
+    height: 90px;
+  }
+
+  .time-box span {
+    font-size: 28px;
+  }
+
+  .wedding-title {
+    font-size: 24px;
+  }
+
+  .card {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .loc-section {
+    padding: 60px 20px;
+  }
+
+  .loc-place {
+    font-size: 18px;
+  }
+
+  .moments-title {
+    font-size: 36px;
+    position: static;
+    margin-bottom: 30px;
+  }
+
+  .moments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gift-section {
+    padding: 80px 20px;
+  }
+
+  .gift-title {
+    font-size: 28px;
+  }
+
+  .Address-title {
+    font-size: 24px;
+  }
+
+  .wish-title {
+    font-size: 26px;
+  }
+
+  .wish-name {
+    font-size: 16px;
+  }
+
+  .wish-message {
+    font-size: 14px;
+  }
+
+  .socials {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    align-items: center;
+    width: 60px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    color: #000000;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .navbar ul.show {
+    display: flex;
+    width: 100px;
+    background-color: #fff;
+  }
+
+  .navbar ul.show :hover {
+    background-color: #000000;
+    color: #fff;
+  }
+
+  .navbar ul a {
+    color: black;
+  }
+}

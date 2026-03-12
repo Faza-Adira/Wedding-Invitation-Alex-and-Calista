@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Invitation - Alex and Calista</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playball&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section class="hero">
+      <div class="overlay"></div>
+
+      <div class="content">
+        <p class="subtitle">The wedding of</p>
+        <h1 class="title">Alex and Calista</h1>
+
+        <p class="guest">
+          Dear<br />
+          <span class="name">Cristian</span>
+        </p>
+
+        <a href="../html/beranda.html" id="open-invite" class="btn">
+          Open Invitation
+        </a>
+      </div>
+    </section>
+
+    <audio id="music" loop>
+      <source src="../asset/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      const music = document.getElementById("music");
+      const openInvite = document.getElementById("open-invite");
+
+      openInvite.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        music.play(); 
+
+        setTimeout(function () {
+          window.location.href = "../html/beranda.html"; 
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
